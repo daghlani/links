@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		<div class="page-title">
+			<h1 style="text-align: center; color: white">test</h1>
+		</div>
+		<div class="base-holder">
+			{% for list in lists %}
+				<div>
+					<div class=_title_div>
+					    <h1 class=_title_h1><strong>{{ cml(list.group) }} Urls</strong></h1>
+					</div>
+					<div class=_urls_div>
+						{% for url in  list.urls %}
+							<button class=glow-on-hover onclick="window.open('{{ url.href }}')" type=button>{{ url.title }}</button>
+						{% endfor %}
+				        <br></br>
+				        <br></br>
+					</div>
+				</div>	
+			{% endfor %}
+		</div>
+	</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+	<head>
+    	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body style="padding: 10px 15px">
+		<div style="display: flex; flex-wrap: wrap;justify-content: center;">
+			{% for list in lists %}
+				<div style="width: 14%;">
+					<div class=_title_div>
+					    <h1 class=_title_h1><strong>{{ cml(list.group) }} Urls</strong></h1>
+					</div>
+					<div class=_urls_div style="width: 100%;">
+						<table>
+							{% for url in  list.urls %}
+								<tr>
+									<td><button class=glow-on-hover onclick="location.href='{{ url.href }}'" type=button style="margin-left: auto;">{{ url.title }}</button></td>
+								</tr>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</body>
+</html>
+ -->
+
+

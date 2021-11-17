@@ -20,7 +20,7 @@ body {
     z-index: 0;
     border-radius: 10px;
     margin: 15px;
-    margin-left: 60px;
+    /*margin-left: 60px;*/
     font: 400 15px Arial;
 }
 
@@ -80,7 +80,22 @@ body {
     }
 }
 
+.base-holder-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.page-title {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.page-title h1 {
+    text-align: center; 
+    color: white
+}
 
 ._title_h1 {
     color: white;
@@ -113,5 +128,30 @@ body {
   grid-template-areas:
     ". . . . . . ."
     ". . . . . . .";
+}
+
+
+html, body , .container {
+  height: 100%;
+  margin: 0;
+}
+  
+/* For presentation only, no need to copy the code below */
+
+.container * {
+  border: 1px solid #00802d;
+  position: relative;
+}
+
+.container *:after {
+  content:attr(class);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
 }
 

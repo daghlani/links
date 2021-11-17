@@ -16,6 +16,14 @@ def index(cfg_file=cfg):
 		'index.html', lists=context, cml=str.title
 		)
 
+@app.route("/2/")
+@auth_required
+def index2(cfg_file=cfg):
+	context = cfg_file['targets']
+	return render_template(
+		'index2.html', lists=context, cml=str.title
+		)
+
 if __name__ == "__main__":
 	extra_files= [i.strip(' ') for i in os.environ.get('LINKS_EXTRA_FILES', 'config/config.yml').split(',')]
 	extra_files.append('config/config.yml')
