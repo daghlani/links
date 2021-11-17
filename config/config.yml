@@ -1,0 +1,44 @@
+targets:
+  - group: 'monitoring'
+    urls:
+      - url:
+        href: http://google.com
+        title:  Google
+      - url:
+        href: http://yahoo.com
+        title: Yahoo
+      - url:
+        href: http://time.ir
+        title: Time
+      - url:
+        href: http://gitlab.com
+        title: Gitlab
+
+
+  - group: 'logging'
+    urls:
+      - url:
+        href: http://docker.com
+        title:  Docker
+      - url:
+        href: http://git.ir
+        title:  GitIr
+      - url:
+        href: http://bbc.com
+        title:  BBC
+      - url:
+        href: http://gitlab.com
+        title: Gitlab
+      - url:
+        href: http://github.com
+        title: Github
+
+
+  - group: 'other'
+    urls:
+      - url:
+        href: http://other.com
+        title:  Other
+      - url:
+        href: http://172.20.142.13/
+        title: FDASH
