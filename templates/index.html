@@ -4,18 +4,24 @@
     	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	</head>
 	<body>
-		{% for list in lists %}
-			<div class=_title_div>
-			    <h1 class=_title_h1><strong>{{ cml(list.group) }} Urls</strong></h1>
-			</div>
-			<div class=_urls_div>
-				{% for url in  list.urls %}
-					<button class=glow-on-hover onclick="location.href='{{ url.href }}'" type=button>{{ url.title }}</button>
-				{% endfor %}
-		        </div>
-		        <br></br>
-		        <br></br>
-			</div>
-		{% endfor %}
+		<div class="page-title">
+			<h1>test</h1>
+		</div>
+		<div class="base-holder-2">
+			{% for list in lists %}
+				<div style="width: 300px">
+					<div class=_title_div>
+					    <h2 class=_title_h1><strong>{{ cml(list.group) }} Urls</strong></h2>
+					</div>
+					<div class=_urls_div>
+						{% for url in  list.urls %}
+							<button class=glow-on-hover onclick="window.open('{{ url.href }}')" type=button>{{ url.title }}</button>
+						{% endfor %}
+				        <br></br>
+				        <br></br>
+					</div>
+				</div>	
+			{% endfor %}
+		</div>
 	</body>
 </html>
