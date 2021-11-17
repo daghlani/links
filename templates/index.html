@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	</head>
+	<body>
+		{% for list in lists %}
+			<div class=_title_div>
+			    <h1 class=_title_h1><strong>{{ cml(list.group) }} Urls</strong></h1>
+			</div>
+			<div class=_urls_div>
+				{% for url in  list.urls %}
+					<button class=glow-on-hover onclick="location.href='{{ url.href }}'" type=button>{{ url.title }}</button>
+				{% endfor %}
+		        </div>
+		        <br></br>
+		        <br></br>
+			</div>
+		{% endfor %}
+	</body>
+</html>
