@@ -4,12 +4,9 @@
 
 import os
 import sys
-import random
-from optparse import OptionParser
+# import random
 from utils.conf_reader import config
 
-# We need a crypt module, but Windows doesn't have one by default.  Try to find
-# one, and tell the user if we can't.
 try:
     import crypt
 except ImportError:
@@ -22,11 +19,6 @@ except ImportError:
 
 
 def salt(user):
-    """Returns a string of 2 randome letters"""
-    # letters = 'abcdefghijklmnopqrstuvwxyz' \
-    #           'ABCDEFGHIJKLMNOPQRSTUVWXYZ' \
-    #           '0123456789/.'
-    # return random.choice(letters) + random.choice(letters)
     return user[:2]
 
 
@@ -40,13 +32,12 @@ class HtpasswdFile:
     def __init__(self, filename, create=False):
         self.entries = []
         self.users = []
-        self.filename = filename
+        self.filename = filename + '.pass' if filename is not None else 'htpasswd.pass'
         if not create:
             if os.path.exists(self.filename):
                 self.load()
             else:
                 self.save()
-                # raise Exception("%s does not exist" % self.filename)
 
     def load(self):
         """Read the htpasswd file into memory."""
@@ -60,7 +51,9 @@ class HtpasswdFile:
 
     def save(self):
         """Write the htpasswd file to disk"""
-        self.update('admin', config.config_list['global']['admin_pass'])
+        admin_pass = config.config_list['global']['LINKS_ADMIN_PASS']
+        admin_pass = admin_pass if admin_pass is not None else 'LinksAdminPass'
+        self.update('admin', os.environ.get('LINKS_ADMIN_PASS', admin_pass))
         open(self.filename, 'w').writelines(["%s:%s\n" % (entry[0], entry[1])
                                              for entry in self.entries])
 
