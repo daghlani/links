@@ -40,5 +40,14 @@ targets:
         href: http://other.com
         title:  Other
       - url:
-        href: http://172.20.142.13/
-        title: FDASH
+        href: http:example.com/
+        title: Example
+
+configs:
+  global:
+    LINKS_PORT: 8002 # default: 5000
+    LINKS_HOST: 127.0.0.1 # default: '127.0.0.1'
+    LINKS_DEBUG_MODE: off # on => enable / off => disable | default False
+    BASIC_AUTH: off # on => enable / off => disable | default False
+    HTPASS_FILE_ADDRESS: ./pass_file
+    admin_pass: alid
