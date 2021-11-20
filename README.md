@@ -41,7 +41,7 @@ _Normal:_
         $ python app.py
     ```
  
- - Now you can see your page on http://127.0.0.1:8001/
+ - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://127.0.0.1:5000/.
 
 
 # Authentication:
