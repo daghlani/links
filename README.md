@@ -43,6 +43,22 @@ _Normal:_
  
  - Now you can see your page on http://127.0.0.1:8001/
 
+
+# Authentication:
+ - There is a simple basic authentication ability that you can active it by set environment variable `BASIC_AUTH` to on.
+    Also you can set password for `admin` username or use default value (`LinksAdminPass`).
+    
+    if you wanna create some users, you can use this commands to create/update or delete your usernames:
+    
+    *create / update:*
+    ```bash
+        python3 app.py htpasswd -u <username> <psasword>
+   ```
+    *delete:*
+    ```bash
+        python3 app.py htpasswd -d <username>
+   ```
+
  _Docker:_
     
     coming Soon...

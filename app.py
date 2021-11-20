@@ -2,31 +2,23 @@ from flask import Flask, render_template
 from utils.conf_reader import config
 from utils.decorators import auth_required
 from utils.htpasswd import HtpasswdFile
-from markupsafe import escape
 from optparse import OptionParser
+import time
 import sys
 import os
 
 app = Flask(__name__)
-HTfile = HtpasswdFile(config.config_list['global']['HTPASS_FILE_ADDRESS'])
+HTfile = HtpasswdFile(
+    os.environ.get('LINKS_HTPASS_FILE_ADDRESS', config.config_list['global']['LINKS_HTPASS_FILE_ADDRESS']))
 pass_file = HTfile.filename
 
 
-@app.route("/")
-@auth_required(htpasswd_obj=HTfile, enable=config.config_list['global']['BASIC_AUTH'])
+@app.route('/')
+@auth_required(htpasswd_obj=HTfile, enable=config.config_list['global']['LINKS_BASIC_AUTH'])
 def index(cfg_file=config.target_list):
     context = cfg_file
     return render_template(
-        'index.html', lists=context, cml=str.title
-    )
-
-
-@app.route("/2/")
-@auth_required(htpasswd_obj=HTfile)
-def index2(cfg_file=config.target_list):
-    context = cfg_file
-    return render_template(
-        'index2.html', lists=context, cml=str.title
+        'index.html', lists=context, cml=str.title, now=int(time.time())
     )
 
 

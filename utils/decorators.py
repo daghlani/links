@@ -1,6 +1,5 @@
 from flask import request, make_response
 from functools import wraps
-from utils.htpasswd import HtpasswdFile
 
 
 def auth_required(htpasswd_obj, enable=False):
