@@ -1,7 +1,7 @@
 configs:
   global:
-    LINKS_PORT: # default: 5000
-    LINKS_HOST: # default: '127.0.0.1'
+    LINKS_PORT: 8003 # default: 5000
+    LINKS_HOST: 172.20.151.148 # default: '127.0.0.1'
     LINKS_DEBUG_MODE: # on => enable / off => disable | default off
     LINKS_BASIC_AUTH: # on => enable / off => disable | default off
     LINKS_HTPASS_FILE_ADDRESS: # default is htpasswd.pass

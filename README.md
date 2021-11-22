@@ -45,7 +45,7 @@ _Normal:_
 
 
 # Authentication:
- - There is a simple basic authentication ability that you can active it by set environment variable `BASIC_AUTH` to on.
+ - There is a simple basic authentication ability that you can active it by set environment variable `LINKS_BASIC_AUTH` to on.
     Also you can set password for `admin` username or use default value (`LinksAdminPass`).
     
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
