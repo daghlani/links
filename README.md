@@ -25,7 +25,7 @@ _Normal:_
         .
    ```
     *As you can see, you could add `color_tag` for every group of yourself to chang them color of columns in page. if 
-    you don't set anything for that, default color will be take. (`#`)*
+    you don't set anything for that, default color will be take. (`#111`)*
     
     
  
