@@ -15,12 +15,11 @@
 					</div>
 					<div class=_urls_div>
 						{% for url in  list.urls %}
-							<button class=glow-on-hover onclick="window.open('{{ url.href }}')" type=button>{{ url.title }}</button>
+							<button class="glow-on-hover after_{{ list.group }}" onclick="window.open('{{ url.href }}')" type=button>{{ url.title }}</button>
 						{% endfor %}
-				        <br></br>
-				        <br></br>
 					</div>
-				</div>	
+				</div>
+                <style>.after_{{ list.group }}::after {background: {{ list.color_tag if list.color_tag is not none else default_color }};}</style>
 			{% endfor %}
 		</div>
 	</body>

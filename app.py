@@ -18,7 +18,7 @@ pass_file = HTfile.filename
 def index(cfg_file=config.target_list):
     context = cfg_file
     return render_template(
-        'index.html', lists=context, cml=str.title, now=int(time.time())
+        'index.html', lists=context, cml=str.title, now=int(time.time()), default_color='#111'
     )
 
 

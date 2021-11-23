@@ -12,6 +12,7 @@ _Normal:_
    ```bash
     targets:
       - group: 'monitoring'
+        color_tag: "#030c50"
         urls:
           - url:
             href: http://example.com
@@ -23,6 +24,8 @@ _Normal:_
         .
         .
    ```
+    *As you can see, you could add `color_tag` for every group of yourself to chang them color of columns in page. if 
+    you don't set anything for that, default color will be take. (`#`)*
     
     
  
