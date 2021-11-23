@@ -9,7 +9,7 @@ _Normal:_
        $ git clone git@github.com:daghlani/links.git
    ```
    
-   ```bash
+   ```yaml
     targets:
       - group: 'monitoring'
         color_tag: "#030c50"
@@ -31,7 +31,7 @@ _Normal:_
  
  - create a virtualenv and install requirements: 
  
-    ```bash
+    ```shell script
         $ virtualenv -p /usr/bin/python3.8 venv
         $ source venv/bin/activate
         $ cd links
@@ -40,7 +40,7 @@ _Normal:_
     
  - Start app:
     
-    ```bash
+    ```shell script
         $ python app.py
     ```
  
@@ -54,11 +54,11 @@ _Normal:_
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
     
     *create / update:*
-    ```bash
+    ```shell script
         python3 app.py htpasswd -u <username> <psasword>
    ```
     *delete:*
-    ```bash
+    ```shell script
         python3 app.py htpasswd -d <username>
    ```
 
