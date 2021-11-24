@@ -5,7 +5,7 @@ configs:
     LINKS_DEBUG_MODE: # on => enable / off => disable | default off
     LINKS_BASIC_AUTH: # on => enable / off => disable | default off
     LINKS_HTPASS_FILE_ADDRESS: # default is htpasswd.pass
-    LINKS_TITLE: Links
+    LINKS_TITLE: Links # base tile of page
     LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass' 
 
 targets:
@@ -42,4 +42,3 @@ targets:
       - url:
         href: http:example.com/
         title: Example
-
