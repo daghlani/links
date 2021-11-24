@@ -1,0 +1,10 @@
+version: '3.4'
+services:
+  LINKS:
+    container_name: ${LINKS_CON_NAME:-LINKS}
+    image: links:${LINKS_V:-latest}
+    ports:
+      - "8040:80"
+    volumes:
+      - $PWD/config:/app/config
+    restart: unless-stopped
