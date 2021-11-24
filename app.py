@@ -17,8 +17,9 @@ pass_file = HTfile.filename
 @auth_required(htpasswd_obj=HTfile, enable=config.config_list['global']['LINKS_BASIC_AUTH'])
 def index(cfg_file=config.target_list):
     context = cfg_file
+    title = os.environ.get('LINKS_TITLE', config.config_list['global']['LINKS_TITLE'])
     return render_template(
-        'index.html', lists=context, cml=str.title, now=int(time.time()), default_color='#111'
+        'index.html', title=title, lists=context, cml=str.title, now=int(time.time()), default_color='#111'
     )
 
 
