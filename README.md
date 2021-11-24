@@ -24,11 +24,11 @@ A dynamic page to create a list of links that you want, only with edit your list
         .
         .
    ```
-    *As you can see, you could add `color_tag` for every group of yourself to chang them color of columns in page. if 
-    you don't set anything for that, default color will be take. (`#111`).*
+    As you can see, you could add `color_tag` for every group of yourself to chang them color of columns in page. if 
+    you don't set anything for that, default color will be take. (`#111`).
     
-    *also to change text color of any group of links, you could set the `text_color` variable as a color that you want. if 
-    you don't set anything for that, default color will be take. (`#22f5ff`).*
+    also to change text color of any group of links, you could set the `text_color` variable as a color that you want. if 
+    you don't set anything for that, default color will be take. (`#22f5ff`).
     
     
  
