@@ -2,7 +2,7 @@
 A dynamic page to create a list of links that you want, only with edit your list :)
 
 # Usage
-_Normal:_
+### _Normal:_
  - Just clone the repo and add your urls and groups to [config.yml](config/config.yml) file like samples:
    
    ```bash
@@ -50,6 +50,40 @@ _Normal:_
  - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://127.0.0.1:5000/.
 
 
+### _Docker:_
+ 
+ - in order to use docker version, just you need pull this docker image and run it like this:
+    ```console
+        $ docker run -p 80:80 --name LINKS daghlani/links:latest
+    ```
+ - also you can use this docker-compose sample:
+ 
+     ```yaml
+        version: '3.4'
+        services:
+          LINKS:
+            container_name: ${LINKS_CON_NAME:-LINKS}
+            image: links:${LINKS_V:-latest}
+            ports:
+              - "8040:80"
+            #volumes:
+            #  - $PWD/config:/app/config
+            restart: unless-stopped
+    ```
+     before it, you must create a `config` directory and put `config.yml` in it. you can see this [config.yml](config/config.yml) sample and then:
+     
+     create a `.env` file like this:
+    ```shell script
+        LINKS_CON_NAME=LINKS
+        LINKS_V=0.2
+    ```
+    
+ - and run it:
+     ```console
+        $ docker-compose up -d
+     ```
+       
+
 # Authentication:
  - There is a simple basic authentication ability that you can active it by set environment variable `LINKS_BASIC_AUTH` to on.
     Also you can set password for `admin` username or use default value (`LinksAdminPass`).
@@ -57,15 +91,10 @@ _Normal:_
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
     
     *create / update:*
-    ```console
+   ```console
         $ python3 app.py htpasswd -u <username> <psasword>
    ```
     *delete:*
-    ```console
+   ```console
         $ python3 app.py htpasswd -d <username>
    ```
-
- _Docker:_
-    
-    coming Soon...
- 
