@@ -25,13 +25,16 @@ _Normal:_
         .
    ```
     *As you can see, you could add `color_tag` for every group of yourself to chang them color of columns in page. if 
-    you don't set anything for that, default color will be take. (`#111`)*
+    you don't set anything for that, default color will be take. (`#111`).*
+    
+    *also to change text color of any group of links, you could set the `text_color` variable as a color that you want. if 
+    you don't set anything for that, default color will be take. (`#22f5ff`).*
     
     
  
  - create a virtualenv and install requirements: 
  
-    ```shell script
+    ```console
         $ virtualenv -p /usr/bin/python3.8 venv
         $ source venv/bin/activate
         $ cd links
@@ -40,7 +43,7 @@ _Normal:_
     
  - Start app:
     
-    ```shell script
+    ```console
         $ python app.py
     ```
  
@@ -54,12 +57,12 @@ _Normal:_
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
     
     *create / update:*
-    ```shell script
-        python3 app.py htpasswd -u <username> <psasword>
+    ```console
+        $ python3 app.py htpasswd -u <username> <psasword>
    ```
     *delete:*
-    ```shell script
-        python3 app.py htpasswd -d <username>
+    ```console
+        $ python3 app.py htpasswd -d <username>
    ```
 
  _Docker:_
