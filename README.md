@@ -6,34 +6,34 @@ A dynamic page to create a list of links that you want, only with edit your list
  - Just clone the repo and add your urls and groups to [config.yml](config/config.yml) file like samples:
    
    ```bash
-       $ git clone git@github.com:daghlani/links.git
+   $ git clone https://github.com/daghlani/links.git
    ```
    
    ```yaml
-    configs:
-      global:
-        LINKS_PORT: 8003
-        LINKS_HOST: 
-        LINKS_DEBUG_MODE: 
-        LINKS_BASIC_AUTH: 
-        LINKS_HTPASS_FILE_ADDRESS: 
-        LINKS_TITLE: Links 
-        LINKS_ADMIN_PASS: 
+   configs:
+     global:
+       LINKS_PORT: 8003
+       LINKS_HOST: 
+       LINKS_DEBUG_MODE: 
+       LINKS_BASIC_AUTH: 
+       LINKS_HTPASS_FILE_ADDRESS: 
+       LINKS_TITLE: Links 
+       LINKS_ADMIN_PASS: 
 
-    targets:
-      - group: 'monitoring'
-        color_tag: "#40354e"
-        text_color:
-        urls:
-          - url:
-            href: http://github.com
-            title: Github
-          - url:
-            href: http://gitlab.com
-            title: Gitlab
-        .
-        .
-        .
+   targets:
+     - group: 'monitoring'
+       color_tag: "#40354e"
+       text_color:
+       urls:
+         - url:
+           href: http://github.com
+           title: Github
+         - url:
+           href: http://gitlab.com
+           title: Gitlab
+       .
+       .
+       .
    ```
     As you can see, you can add `color_tag` for every group of yourself to chang them color of columns in page. if 
     you don't set anything for that, default color will be take. (`#111`).
@@ -46,16 +46,16 @@ A dynamic page to create a list of links that you want, only with edit your list
  - create a virtualenv and install requirements: 
  
     ```console
-        $ virtualenv -p /usr/bin/python3.8 venv
-        $ source venv/bin/activate
-        $ cd links
-        $ pip install -r requirements.txt
+    $ virtualenv -p /usr/bin/python3.8 venv
+    $ source venv/bin/activate
+    $ cd links
+    $ pip install -r requirements.txt
     ```
     
  - Start app:
     
     ```console
-        $ python app.py
+    $ python app.py
     ```
  
  - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://127.0.0.1:5000/.
@@ -66,31 +66,31 @@ A dynamic page to create a list of links that you want, only with edit your list
  
  - in order to use docker version, just you need pull this docker image and run it like this:
     ```console
-        $ docker run -d -p 80:80 --name LINKS daghlani/links:latest
+    $ docker run -d -p 80:80 -v $PWD/config:/app/config --name LINKS daghlani/links:latest
     ```
  - also you can use this docker-compose sample:
  
      ```yaml
-        version: '3.4'
-          services:
-            LINKS:
-              container_name: ${LINKS_CON_NAME:-LINKS}
-              image: daghlani/links:${LINKS_V:-latest}
-              ports:
-                - "8040:80"
-              volumes:
-                - $PWD/config:/app/config
-              restart: unless-stopped
+     version: '3.4'
+     services:
+       LINKS:
+         container_name: ${LINKS_CON_NAME:-LINKS}
+         image: daghlani/links:${LINKS_V:-latest}
+         ports:
+           - "8040:80"
+         volumes:
+           - $PWD/config:/app/config
+         restart: unless-stopped
     ```     
-     create a `.env` file like this:
+     create a `.env` file like this if you want to change some compose environments:
     ```shell script
-        LINKS_CON_NAME=LINKS
-        LINKS_V=0.3
+    LINKS_CON_NAME=LINKS
+    LINKS_V=0.3
     ```
     
  - and run it:
      ```console
-        $ docker-compose up -d
+     $ docker-compose up -d
      ```
        
 
@@ -101,10 +101,21 @@ A dynamic page to create a list of links that you want, only with edit your list
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
     
     *create / update:*
-   ```console
-        $ python3 app.py htpasswd -u <username> <psasword>
-   ```
-    *delete:*
-   ```console
-        $ python3 app.py htpasswd -d <username>
-   ```
+     ```console
+     $ python3 app.py htpasswd -u <username> <psasword>
+     ```
+      *delete:*
+     ```console
+     $ python3 app.py htpasswd -d <username>
+     ```
+#
+   - In _docker_ mode:
+
+     *create / update:*
+     ```console
+     $ docker exec LINKS python3 /app/app.py htpasswd -u <username> <psasword>
+     ```
+     *delete:*
+     ```console
+     $ docker exec LINKS python3 /app/app.py htpasswd -d <username>
+     ```

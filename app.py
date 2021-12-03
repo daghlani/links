@@ -8,9 +8,7 @@ import sys
 import os
 
 app = Flask(__name__)
-HTfile = HtpasswdFile(
-    os.environ.get('LINKS_HTPASS_FILE_ADDRESS', config.config_list['global']['LINKS_HTPASS_FILE_ADDRESS']))
-pass_file = HTfile.filename
+HTfile = HtpasswdFile()
 
 
 @app.route('/')
@@ -57,7 +55,7 @@ if __name__ == "__main__":
     extra_files = [i.strip(' ') for i in os.environ.get('LINKS_EXTRA_FILES', 'config/config.yml').split(',')]
     # add config file to extra files
     extra_files.append('config/config.yml')
-    extra_files.append(pass_file)
+    extra_files.append('config/htpasswd.pass')
     if len(sys.argv) > 1:
         if sys.argv[1] == 'htpasswd':
             main()

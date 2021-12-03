@@ -1,15 +1,14 @@
 configs:
   global:
-    LINKS_PORT: 8003 # default: 5000 ----- notice: this port only used, when you want run this project in normal mode. in docker the container port is 80.
+    LINKS_PORT: # default: 5000 ----- notice: this port only used, when you want run this project in normal mode. in docker the container port is 80.
     LINKS_HOST: # default: '127.0.0.1' ----- notice: this port only used, when you want run this project in normal mode. in docker the container port is 80.
     LINKS_DEBUG_MODE: # on => enable / off => disable | default off
-    LINKS_BASIC_AUTH: # on => enable / off => disable | default off
-    LINKS_HTPASS_FILE_ADDRESS: # default is htpasswd.pass
+    LINKS_BASIC_AUTH: on # on => enable / off => disable | default off
     LINKS_TITLE: Links # base tile of page
     LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass' 
 
 targets:
-  - group: 'monitoring'
+  - group: 'git'
     color_tag: "#40354e"
     text_color:
     urls:
@@ -19,7 +18,7 @@ targets:
       - url:
         href: http://gitlab.com
         title: Gitlab
-  - group: 'logging'
+  - group: 'DevOps'
     color_tag: "#7b4f4f"
     text_color: "#fff"
     urls:
@@ -27,11 +26,11 @@ targets:
         href: http://docker.com
         title: Docker
       - url:
-        href: http://git.ir
-        title: GitIr
+        href: https://stackoverflow.com/
+        title: Stackoverflow
       - url:
-        href: http://github.com
-        title: Github
+        href: https://ubuntu.com/
+        title: Ubuntu
   - group: 'other'
     color_tag: "#312626"
     text_color: "#e65396"

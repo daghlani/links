@@ -26,13 +26,18 @@ def crypt_user(user, password):
     return crypt.crypt(password, salt(user))
 
 
+def toucher(_file):
+    from pathlib import Path
+    Path(_file).touch()
+
+
 class HtpasswdFile:
     """A class for manipulating htpasswd files."""
 
-    def __init__(self, filename, create=False):
+    def __init__(self, create=False):
         self.entries = []
         self.users = []
-        self.filename = filename + '.pass' if filename is not None else 'htpasswd.pass'
+        self.filename = 'config/htpasswd.pass'
         if not create:
             if os.path.exists(self.filename):
                 self.load()
@@ -56,6 +61,7 @@ class HtpasswdFile:
         self.update('admin', os.environ.get('LINKS_ADMIN_PASS', admin_pass))
         open(self.filename, 'w').writelines(["%s:%s\n" % (entry[0], entry[1])
                                              for entry in self.entries])
+        toucher('config/config.yml')
 
     def update(self, username, password):
         """Replace the entry for the given user, or add it if new."""
