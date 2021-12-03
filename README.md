@@ -10,24 +10,35 @@ A dynamic page to create a list of links that you want, only with edit your list
    ```
    
    ```yaml
+    configs:
+      global:
+        LINKS_PORT: 8003
+        LINKS_HOST: 
+        LINKS_DEBUG_MODE: 
+        LINKS_BASIC_AUTH: 
+        LINKS_HTPASS_FILE_ADDRESS: 
+        LINKS_TITLE: Links 
+        LINKS_ADMIN_PASS: 
+
     targets:
       - group: 'monitoring'
-        color_tag: "#030c50"
+        color_tag: "#40354e"
+        text_color:
         urls:
           - url:
-            href: http://example.com
-            title:  Example
+            href: http://github.com
+            title: Github
           - url:
-            href: http://example1.com
-            title: Example1
+            href: http://gitlab.com
+            title: Gitlab
         .
         .
         .
    ```
-    As you can see, you could add `color_tag` for every group of yourself to chang them color of columns in page. if 
+    As you can see, you can add `color_tag` for every group of yourself to chang them color of columns in page. if 
     you don't set anything for that, default color will be take. (`#111`).
     
-    also to change text color of any group of links, you could set the `text_color` variable as a color that you want. if 
+    also to change text color of any group of links, you can set the `text_color` variable as a color that you want. if 
     you don't set anything for that, default color will be take. (`#22f5ff`).
     
     
@@ -61,22 +72,20 @@ A dynamic page to create a list of links that you want, only with edit your list
  
      ```yaml
         version: '3.4'
-        services:
-          LINKS:
-            container_name: ${LINKS_CON_NAME:-LINKS}
-            image: links:${LINKS_V:-latest}
-            ports:
-              - "8040:80"
-            #volumes:
-            #  - $PWD/config:/app/config
-            restart: unless-stopped
-    ```
-     before it, you must create a `config` directory and put `config.yml` in it. you can see this [config.yml](config/config.yml) sample and then:
-     
+          services:
+            LINKS:
+              container_name: ${LINKS_CON_NAME:-LINKS}
+              image: daghlani/links:${LINKS_V:-latest}
+              ports:
+                - "8040:80"
+              volumes:
+                - $PWD/config:/app/config
+              restart: unless-stopped
+    ```     
      create a `.env` file like this:
     ```shell script
         LINKS_CON_NAME=LINKS
-        LINKS_V=0.2
+        LINKS_V=0.3
     ```
     
  - and run it:
