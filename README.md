@@ -58,7 +58,7 @@ A dynamic page to create a list of links that you want, only with edit your list
     $ python app.py
     ```
  
- - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://127.0.0.1:5000/.
+ - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://localhost:5000/.
 
     ![](exp/exp1.png)
 
