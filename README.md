@@ -55,7 +55,7 @@ A dynamic page to create a list of links that you want, only with edit your list
  
  - in order to use docker version, just you need pull this docker image and run it like this:
     ```console
-        $ docker run -p 80:80 --name LINKS daghlani/links:latest
+        $ docker run -d -p 80:80 --name LINKS daghlani/links:latest
     ```
  - also you can use this docker-compose sample:
  

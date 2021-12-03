@@ -14,8 +14,8 @@ targets:
     text_color:
     urls:
       - url:
-        href: http://google.com
-        title: Google
+        href: http://github.com
+        title: Github
       - url:
         href: http://gitlab.com
         title: Gitlab
