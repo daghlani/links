@@ -1,0 +1,44 @@
+configs:
+  global:
+    LINKS_PORT: 8003 # default: 5000 ----- notice: this port only used, when you want run this project in normal mode. in docker the container port is 80.
+    LINKS_HOST: # default: '127.0.0.1' ----- notice: this port only used, when you want run this project in normal mode. in docker the container port is 80.
+    LINKS_DEBUG_MODE: # on => enable / off => disable | default off
+    LINKS_BASIC_AUTH: # on => enable / off => disable | default off
+    LINKS_HTPASS_FILE_ADDRESS: # default is htpasswd.pass
+    LINKS_TITLE: Links # base tile of page
+    LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass' 
+
+targets:
+  - group: 'monitoring'
+    color_tag: "#40354e"
+    text_color:
+    urls:
+      - url:
+        href: http://google.com
+        title: Google
+      - url:
+        href: http://gitlab.com
+        title: Gitlab
+  - group: 'logging'
+    color_tag: "#7b4f4f"
+    text_color: "#fff"
+    urls:
+      - url:
+        href: http://docker.com
+        title: Docker
+      - url:
+        href: http://git.ir
+        title: GitIr
+      - url:
+        href: http://github.com
+        title: Github
+  - group: 'other'
+    color_tag: "#312626"
+    text_color: "#e65396"
+    urls:
+      - url:
+        href: http://other.com
+        title: Other
+      - url:
+        href: http:example.com/
+        title: Example
