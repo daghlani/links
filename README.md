@@ -96,7 +96,12 @@ A dynamic page to create a list of links that you want, only with edit your list
 
 # Authentication:
  - There is a simple basic authentication ability that you can active it by set environment variable `LINKS_BASIC_AUTH` to `on`.
-    Also you can set password for `admin` username or use default value (`LinksAdminPass`).
+
+    ---
+
+    > **_NOTE:_** Also you can set password for `admin` username or use default value (`LinksAdminPass`).
+
+    ---
     
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
     
