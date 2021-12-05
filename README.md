@@ -1,5 +1,5 @@
 # links
-A dynamic page to create a list of links that you want, only with edit your list :)
+A dynamic page to create a list of links that you want, just only with edit your list :)
 
 # Usage
 ### _Normal:_
