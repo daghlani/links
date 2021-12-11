@@ -15,7 +15,7 @@
 					</div>
 					<div class=_urls_div>
 						{% for url in  list.urls %}
-							<button class=glow-on-hover onclick="window.open('{{ url.href }}')" type=button>{{ url.title }}</button>
+							<button class=glow-on-hover onclick="window.open('{{ url.url }}')" type=button>{{ url.title }}</button>
 						{% endfor %}
 				        <br></br>
 				        <br></br>
@@ -42,7 +42,7 @@
 						<table>
 							{% for url in  list.urls %}
 								<tr>
-									<td><button class=glow-on-hover onclick="location.href='{{ url.href }}'" type=button style="margin-left: auto;">{{ url.title }}</button></td>
+									<td><button class=glow-on-hover onclick="location.href='{{ url.url }}'" type=button style="margin-left: auto;">{{ url.title }}</button></td>
 								</tr>
 							{% endfor %}
 						</table>

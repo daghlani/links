@@ -5,39 +5,32 @@ configs:
     LINKS_DEBUG_MODE: # on => enable / off => disable | default off
     LINKS_BASIC_AUTH: # on => enable / off => disable | default off
     LINKS_TITLE: Links # base tile of page
-    LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass' 
+    LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass'
 
 targets:
   - group: 'git'
-    color_tag: "#40354e"
-    text_color:
+    color_tag: "pink" # color of bubbles you can set color code or name like CSS (#008000 or green)
+    text_color: "black" # color of bubbles you can set color code or name like CSS (#40354e or green)
     urls:
-      - url:
-        href: http://github.com
+      - url: http://github.com
         title: Github
-      - url:
-        href: http://gitlab.com
+      - url: http://gitlab.com
         title: Gitlab
   - group: 'DevOps'
     color_tag: "#7b4f4f"
     text_color: "#fff"
     urls:
-      - url:
-        href: http://docker.com
+      - url: http://docker.com
         title: Docker
-      - url:
-        href: https://stackoverflow.com/
+      - url: https://stackoverflow.com/
         title: Stackoverflow
-      - url:
-        href: https://ubuntu.com/
+      - url: https://ubuntu.com/
         title: Ubuntu
   - group: 'other'
     color_tag: "#312626"
     text_color: "#e65396"
     urls:
-      - url:
-        href: http://other.com
+      - url: http://other.com
         title: Other
-      - url:
-        href: http:example.com/
+      - url: http:example.com/
         title: Example

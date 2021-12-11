@@ -15,7 +15,7 @@
             </div>
             <div class=_urls_div>
                 {% for url in  list.urls %}
-                    <button class="glow-on-hover after_{{ list.group }}" onclick="window.open('{{ url.href }}')"
+                    <button class="glow-on-hover after_{{ list.group }}" onclick="window.open('{{ url.url }}')"
                             type=button style="color: {{ list.text_color }}">{{ url.title }}</button>
                 {% endfor %}
             </div>

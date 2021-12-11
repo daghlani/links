@@ -25,11 +25,9 @@ A dynamic page to create a list of links that you want, just only with edit your
        color_tag: "#40354e"
        text_color:
        urls:
-         - url:
-           href: http://github.com
+         - url: http://github.com
            title: Github
-         - url:
-           href: http://gitlab.com
+         - url: http://gitlab.com
            title: Gitlab
        .
        .
@@ -40,7 +38,9 @@ A dynamic page to create a list of links that you want, just only with edit your
     
     also to change text color of any group of links, you can set the `text_color` variable as a color that you want. if 
     you don't set anything for that, default color will be take. (`#22f5ff`).
-    
+    ---
+    > **_NOTE:_** in order to change colors, you can choose code like `#008000` or name like `green`.
+    ---
     
  
  - create a virtualenv and install requirements: 
@@ -98,9 +98,7 @@ A dynamic page to create a list of links that you want, just only with edit your
  - There is a simple basic authentication ability that you can active it by set environment variable `LINKS_BASIC_AUTH` to `on`.
 
     ---
-
     > **_NOTE:_** Also you can set password for `admin` username or use default value (`LinksAdminPass`).
-
     ---
     
     if you wanna create some users, you can use this commands to create/update or delete your usernames:
@@ -118,9 +116,12 @@ A dynamic page to create a list of links that you want, just only with edit your
 
      *create / update:*
      ```console
-     $ docker exec LINKS python3 /app/app.py htpasswd -u <username> <psasword>
+     $ docker exec LINKS python3 app.py htpasswd -u <username> <psasword>
      ```
      *delete:*
      ```console
-     $ docker exec LINKS python3 /app/app.py htpasswd -d <username>
+     $ docker exec LINKS python3 app.py htpasswd -d <username>
      ```
+
+### ToDo
+- [ ] running normal mode in uwsgi
