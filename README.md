@@ -124,4 +124,4 @@ A dynamic page to create a list of links that you want, just only with edit your
      ```
 
 ### ToDo
-   - [ ] running normal mode in uwsgi
+     - [ ] running normal mode in uwsgi
