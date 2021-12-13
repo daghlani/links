@@ -28,3 +28,4 @@ six==1.14.0
 urllib3==1.25.8
 webencodings==0.5.1
 Werkzeug==2.0.2
+uWSGI==2.0.20
