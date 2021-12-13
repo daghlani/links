@@ -38,6 +38,7 @@ A dynamic page to create a list of links that you want, just only with edit your
     
     also to change text color of any group of links, you can set the `text_color` variable as a color that you want. if 
     you don't set anything for that, default color will be take. (`#22f5ff`).
+    
     ---
     > **_NOTE:_** in order to change colors, you can choose code like `#008000` or name like `green`.
     ---
