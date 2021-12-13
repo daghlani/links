@@ -5,7 +5,7 @@ configs:
     LINKS_DEBUG_MODE: # on => enable / off => disable | default off
     LINKS_BASIC_AUTH: # on => enable / off => disable | default off
     LINKS_TITLE: Links # base tile of page
-    LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass' 
+    LINKS_ADMIN_PASS: # default password for username admin 'LinksAdminPass'
 
 targets:
   - group: 'git'
