@@ -7,7 +7,8 @@ body {
 }
 
 .glow-on-hover {
-    width: 220px;
+    /*width: 220px;*/
+    width: 150px;
     height: 50px;
     border: none;
     outline: none;
@@ -80,6 +81,10 @@ body {
     }
 }
 
+._main_title {
+    width: 220px
+}
+
 .base-holder-2 {
     display: flex;
     flex-wrap: wrap;
@@ -102,6 +107,7 @@ body {
 }
 
 ._title_div {
+    /*width: 90%;*/
     width: 90%;
     border-bottom: outset red;
     color: white;
