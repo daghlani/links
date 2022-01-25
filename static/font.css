@@ -1,0 +1,8 @@
+/*Persian Fonts*/
+@font-face {
+  font-family: 'shabnam';
+  src: url(fonts/persian-font/shabnam-font-v2.4.0/Shabnam.woff) format('woff'),
+       url(fonts/persian-font/shabnam-font-v2.4.0/Shabnam.ttf) format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
