@@ -4,4 +4,5 @@ CFG_FILE=$(md5sum /app/config/config.yml | awk '{print $1}')
 if [[ $EXP_FILE == $CFG_FILE ]] || [[ $(ls /app/config/config.yml 2> /dev/null) = '' ]]; then
 	cp /app/exp/config.yml /app/config/
 fi
-bash /start.sh
+/usr/bin/supervisord
+#bash /start.sh
