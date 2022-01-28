@@ -12,25 +12,26 @@ targets:
     color_tag: "pink" # color of bubbles you can set color code or name like CSS (#008000 or green)
     text_color: "black" # color of bubbles you can set color code or name like CSS (#40354e or green)
     urls:
-      - url: http://github.com
-        title: Github
-      - url: http://gitlab.com
-        title: Gitlab
+      - title: Github
+        url: http://github.com
+      - title: Gitlab
+        url: http://gitlab.com
   - group: 'DevOps'
     color_tag: "#7b4f4f"
     text_color: "#fff"
     urls:
-      - url: http://docker.com
-        title: Docker
-      - url: https://stackoverflow.com/
-        title: Stackoverflow
-      - url: https://ubuntu.com/
-        title: Ubuntu
+      - title: Docker
+        url: http://docker.com
+      - title: Stackoverflow
+        url: https://stackoverflow.com/
+      - title: Ubuntu
+        url: https://ubuntu.com/
   - group: 'other'
     color_tag: "#312626"
     text_color: "#e65396"
     urls:
-      - url: http://other.com
-        title: Other
-      - url: http:example.com/
-        title: Example
+      - title: Other
+        url: http://other.com
+      - title: Example
+        url: http:example.com/
+        
