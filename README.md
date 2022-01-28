@@ -143,4 +143,5 @@ A dynamic page to create a list of links that you want, just only with edit your
      ```
 
 ### ToDo
-   - [ ] running normal mode in uwsgi
+   - [x] running normal mode in uwsgi
+   - [ ] create a login page and powerfull authentication
