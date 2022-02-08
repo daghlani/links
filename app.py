@@ -3,12 +3,19 @@ from utils.conf_reader import config
 from utils.decorators import auth_required
 from utils.htpasswd import HtpasswdFile
 from optparse import OptionParser
+from flask import send_from_directory
 import time
 import sys
 import os
 
 app = Flask(__name__)
 HTfile = HtpasswdFile()
+
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'img/favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 @app.route('/')
