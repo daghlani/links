@@ -25,10 +25,12 @@ A dynamic page to create a list of links that you want, just only with edit your
        color_tag: "#40354e"
        text_color:
        urls:
-         - url: http://github.com
-           title: Github
-         - url: http://gitlab.com
-           title: Gitlab
+         - title: Github
+           url: http://github.com
+           
+         - title: Gitlab
+           url: http://gitlab.com
+           
        .
        .
        .
@@ -58,8 +60,24 @@ A dynamic page to create a list of links that you want, just only with edit your
     ```console
     $ python app.py
     ```
+    or you can install [uwsgi](https://uwsgi-docs.readthedocs.io/en/latest/Install.html) and start like below:
+
+    ```console
+    $ uwsgi --ini uwsgi.ini --die-on-term
+    ```
+    then you must config a webserver like [`nginx`](https://www.nginx.com/) and proxy traffics to the created socket with [`uwsgi.ini`](uwsgi.ini). example nginx config will be like this:
+    ```bash
+    server {
+      listen 80;
+      server_name 0.0.0.0;
+      location / {
+          include         uwsgi_params;
+          uwsgi_pass      unix:/<home-app>/links/app.sock;
+      }
+    }
+    ```
  
- - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://localhost:5000/.
+ - Now if you don't change the `LINKS_HOST` and `LINKS_PORT` you can see your links page on http://localhost:5000/ (or http://localhost in uwsgi mode).
 
     ![](exp/exp1.png)
 
@@ -125,4 +143,5 @@ A dynamic page to create a list of links that you want, just only with edit your
      ```
 
 ### ToDo
-   - [ ] running normal mode in uwsgi
+   - [x] running normal mode in uwsgi
+   - [ ] create a login page and powerfull authentication
