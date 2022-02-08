@@ -33,5 +33,5 @@ targets:
       - title: Other
         url: http://other.com
       - title: Example
-        url: http:example.com/
+        url: http://example.com/
         
